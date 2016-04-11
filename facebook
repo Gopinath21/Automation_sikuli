@@ -1,0 +1,36 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
+
+public class JustStart {
+public static void main(String[] args) throws FindFailed, InterruptedException {
+	 Screen s =new Screen();
+	 
+	// Pattern img1=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\gmaillog.png");
+	 Pattern email=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\email.png");
+	 Pattern next=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\next.png");
+	 Pattern password=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\password.png");
+	// Pattern SignIN=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\next.png");
+	 Pattern login = new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\login.png");
+	 Pattern logout01=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\logout01.png");
+	 Pattern logout02=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\logout02.png");
+	 WebDriver driver=new FirefoxDriver();
+	 driver.manage().window().maximize();
+	 driver.get("http://www.facebook.com");
+	
+	 
+	// s.click(img1); 
+	 Thread.sleep(200);
+	 System.out.println("sleep ");
+	 s.type(email,"gopinath1936@gmail.com");
+	 s.click(next);
+	 s.type(password,"password");
+	 s.click(login);
+	 
+	 s.click(logout01);
+	 Thread.sleep(400);
+	 s.click(logout02);
+}
+}
