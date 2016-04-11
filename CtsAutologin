@@ -1,0 +1,32 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
+
+public class AutoLogin {
+
+	public static void main(String[] args) throws FindFailed, InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver=new FirefoxDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://mail.cognizant.com");
+		
+		Pattern login=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\ctsusername.png");
+		Pattern password=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\ctspassword.png");
+		
+		Screen s=new Screen();
+		s.type(login, "437474");
+		s.type(password, "password");
+		
+		Pattern signin=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\ctsin.png");
+		s.click(signin);
+		
+		Thread.sleep(200);
+	//	Pattern logout=new Pattern("C:\\Users\\gopi\\Desktop\\sikuli_imgs\\ctsout.png");
+	//	s.click(logout);
+		
+	}
+
+}
